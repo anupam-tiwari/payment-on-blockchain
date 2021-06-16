@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    'mongodb+srv://Anupam:Anupam01$@cluster0.jm4h2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    'mongodb+srv://dbuser:wEo6112uvyK9hWtg@cluster0.jm4h2.mongodb.net/blockchain?retryWrites=true&w=majority',
     {useNewUrlParser: true, useUnifiedTopology: true}
 );
 

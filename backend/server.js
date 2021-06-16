@@ -2,7 +2,7 @@ const Koa = require('koa');
 const Router = require('@koa/router');
 const cors = require('@koa/cors');
 const ethers = require('ethers');
-const PaymentProcessor = require('../build/contracts/PaymentProcessor.json');
+const PaymentProcessor = require('../frontend/src/contracts/PaymentProcessor.json');
 const {Payment} = require('./db.js');
 
 const app = new Koa();
@@ -53,10 +53,10 @@ app.listen(4000, () => {
 
 const listenToEvents = () => {
     const provider = new ethers.providers.JsonRpcProvider('http://localhost:9545'); 
-    const networdId = '5777';
+    const networkId = '5777';
 
     const paymentProcessor = new ethers.Contract(
-        PaymentProcessor.networks[networdId].address, 
+        PaymentProcessor.networks[networkId].address, 
         PaymentProcessor.abi,
         provider
     ); 
