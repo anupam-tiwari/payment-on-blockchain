@@ -9,4 +9,8 @@ contract Dai is ERC20 {
     function faucet(address to, uint amount) external{
         _mint(to, amount);
     }
+
+    // function balance(address account) external{
+    //     balanceOf(account);
+    // }
 }

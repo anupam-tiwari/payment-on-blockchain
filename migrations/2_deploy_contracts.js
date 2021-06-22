@@ -4,12 +4,13 @@ const PaymentProcessor = artifacts.require('PaymentProcessor.sol');
 
 module.exports = async function (deployer, network, addresses) {
   const [admin, payer, _] = addresses; 
+  console.log(admin, "admin address"); 
+  console.log(payer, "payer address");
 
   if(network === 'develop'){
       await deployer.deploy(Dai);
       const dai = await Dai.deployed();
-      await dai.faucet(payer, web3.utils.toWei('10000'));
-
+      await dai.faucet(payer, web3.utils.toWei('100'));
       await deployer.deploy(PaymentProcessor, admin, dai.address);
 
   }else {
