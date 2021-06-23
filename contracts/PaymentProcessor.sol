@@ -11,7 +11,7 @@ contract PaymentProcessor{
     event PaymentDone(
         address payer, 
         uint amount, 
-        uint paymentId, 
+       // uint paymentId, 
         uint date
     );
 
@@ -31,7 +31,7 @@ contract PaymentProcessor{
        // emit Approval(payer1, admin, amount); 
         //dai.transfer(admin, amount);
         dai.transferFrom(msg.sender, admin, amount);
-        //emit PaymentDone(msg.sender, amount, paymentId, block.timestamp);
+        //emit PaymentDone(msg.sender, amount, block.timestamp);
     } 
 }
 
